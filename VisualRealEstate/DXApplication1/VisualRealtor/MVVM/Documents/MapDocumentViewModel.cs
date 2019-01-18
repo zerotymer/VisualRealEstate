@@ -25,7 +25,7 @@ namespace VisualRealtor.MVVM.Documents
             //Test
             SolutionExplorerItem item = new SolutionExplorerItem() { Name = "Test", Description = "NONO" };
             List<SolutionExplorerItem> list = new List<SolutionExplorerItem>() { item };
-            this.SolutionExplorerItems = new ReadOnlyCollection<SolutionExplorerItem>(list);
+            //this.SolutionExplorerItems = new ReadOnlyCollection<SolutionExplorerItem>(list);
         }
     }
 }

@@ -98,7 +98,7 @@ namespace VisualRealtor.MVVM
             
 
             map = new Documents.MapDocumentViewModel();
-            this.SolutiuonExplorerItems = map.SolutionExplorerItems;
+            //this.SolutiuonExplorerItems = map.SolutionExplorerItems;
 
             DocumentPanel panel = new DocumentPanel();
 
