@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="VisualRealtor.MVVM.Components.RequestStackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+             xmlns:comp="clr-namespace:VisualRealtor.MVVM.Components"
+             mc:Ignorable="d"
+             d:DesignHeight="250" d:DesignWidth="500">
+<UserControl.DataContext>
+        <comp:RequestStackViewModel/>
+</UserControl.DataContext>
+    <dx:BackgroundPanel>
+        <dxb:BarManager>
+            <dxb:BarManager.Items>
+                
+            </dxb:BarManager.Items>
+            <dxb:BarManager.Bars>
+                
+            </dxb:BarManager.Bars>
+            <DockPanel>
+                <dxb:BarContainerControl x:Name="bcMenu" DockPanel.Dock="Top"/>
+                <Border>
+                    <!-- Grid / Tree -->
+                </Border>
+            </DockPanel>
+        </dxb:BarManager>
+    </dx:BackgroundPanel>
+</UserControl>

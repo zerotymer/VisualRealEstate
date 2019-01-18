@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "e:\\Sync\\source\\repos\\VisualRealEstate\\VisualRealEstate\\ConsoleApp1\\ConsoleApp1.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

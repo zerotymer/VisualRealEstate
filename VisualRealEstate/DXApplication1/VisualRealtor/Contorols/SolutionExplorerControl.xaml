@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="VisualRealtor.Contorols.SolutionExplorerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <dx:BackgroundPanel>
+        <dxb:BarManager>
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem x:Name="bHome" Content="홈" CategoryName="Solution" Hint="홈" Glyph="pack://application:,,,/MVVM Template Project;component/Images/docking/NewProject.png"/>
+                <dxb:BarButtonItem x:Name="bRefresh" Content="새로고침" CategoryName="Solution" Hint="새로고침"/>
+                <dxb:BarEditItem x:Name="bEdit" CategoryName="Search" Hint="Search" EditValue="솔루션 탐색기 검색" Alignment="Default">
+                    <dxb:BarEditItem.EditSettings>
+                        <dxe:TextEditSettings />
+                    </dxb:BarEditItem.EditSettings>
+                </dxb:BarEditItem>
+            </dxb:BarManager.Items>
+            <dxb:BarManager.Bars>
+                <dxb:Bar Caption="Solution" UseWholeRow="True" AllowQuickCustomization="False" ShowDragWidget="False">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerName="SolutionBar"/>
+                    </dxb:Bar.DockInfo>
+                    <dxb:Bar.ItemLinks>
+                        <dxb:BarButtonItemLink BarItemName="bHome"/>
+                        <dxb:BarItemLinkSeparator/>
+                    </dxb:Bar.ItemLinks>
+                </dxb:Bar>
+                <dxb:Bar Caption="Edit" UseWholeRow="True" AllowQuickCustomization="False" ShowDragWidget="False">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerName="EditBar"/>
+                    </dxb:Bar.DockInfo>
+                    <dxb:Bar.ItemLinks>
+                        <dxb:BarEditItemLink BarItemName="bEdit"/>
+                    </dxb:Bar.ItemLinks>
+                </dxb:Bar>
+            </dxb:BarManager.Bars>
+            <DockPanel>
+                <dxb:BarContainerControl x:Name="SolutionBar" DockPanel.Dock="Top"/>
+                <dxb:BarContainerControl x:Name="EditBar" DockPanel.Dock="Top"/>
+                <Border>
+                    <Border.Resources>
+                        <HierarchicalDataTemplate x:Key="ChildTemplate">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding GlyphPath}"/>
+                                <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding Name}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                        <HierarchicalDataTemplate x:Key="template" 
+                                                  ItemsSource="{Binding Path=Items}"
+                                                  ItemTemplate="{StaticResource ChildTemplate}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding GlyphPath}"/>
+                                <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Text="{Binding Name}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </Border.Resources>
+                    <TreeView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource template}" BorderThickness="0" FocusManager.IsFocusScope="True">
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EventToCommand EventName="MouseDoubleClick" Command="{Binding RequestAPICommand}" PassEventArgsToCommand="True">
+                                <dxmvvm:EventToCommand.EventArgsConverter>
+                                    <dxmvvm:ItemsControlMouseEventArgsConverter/>
+                                </dxmvvm:EventToCommand.EventArgsConverter>
+                            </dxmvvm:EventToCommand>
+                        </dxmvvm:Interaction.Behaviors>
+                        <TreeView.ItemContainerStyle>
+                            <Style TargetType="{x:Type TreeViewItem}">
+                                <Setter Property="IsExpanded" Value="True"/>
+                                <Setter Property="ItemsSource" Value="{Binding Items}"/>
+                            </Style>
+                        </TreeView.ItemContainerStyle>
+                    </TreeView>
+                </Border>
+            </DockPanel>
+        </dxb:BarManager>
+    </dx:BackgroundPanel>
+</UserControl>

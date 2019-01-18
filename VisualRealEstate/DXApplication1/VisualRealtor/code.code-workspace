@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "_site"
+		},
+		{
+			"path": "api"
+		},
+		{
+			"path": "APIs"
+		},
+		{
+			"path": "articles"
+		},
+		{
+			"path": "bin"
+		},
+		{
+			"path": "Icons"
+		},
+		{
+			"path": "Images"
+		},
+		{
+			"path": "obj"
+		},
+		{
+			"path": "Properties"
+		},
+		{
+			"path": "ViewModels"
+		},
+		{
+			"path": "VisualRealtor"
+		}
+	]
+}

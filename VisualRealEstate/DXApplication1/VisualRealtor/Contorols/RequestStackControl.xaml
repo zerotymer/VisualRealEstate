@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="VisualRealtor.Contorols.RequestStackControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <dx:BackgroundPanel>
+        <dxb:BarManager>
+            <dxb:BarManager.Items>
+                <dxb:BarCheckItem Name="bAll" Content="0 Requestes" Glyph="/MVVM Template Project;component/Icons/Check.png"/>
+                <dxb:BarCheckItem Name="bWarnings" Content="0 Warnings" Glyph="/MVVM Template Project;component/Images/docking/Warning.png"/>
+                <dxb:BarCheckItem Name="bErrors" Content="0 Errors" Glyph="/MVVM Template Project;component/Images/docking/Error.png"/>
+            </dxb:BarManager.Items>
+            <dxb:BarManager.Bars>
+                <dxb:Bar Caption="RequestStack" x:Name="RequestStack" UseWholeRow="True" AllowQuickCustomization="False" ShowDragWidget="False">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerName="bcMenu"/>
+                    </dxb:Bar.DockInfo>
+                    <dxb:Bar.ItemLinks>
+                        <dxb:BarCheckItemLink BarItemName="bAll" BarItemDisplayMode="ContentAndGlyph"/>
+                        <dxb:BarItemLinkSeparator/>
+                        <dxb:BarCheckItemLink BarItemName="bWarnings" BarItemDisplayMode="ContentAndGlyph"/>
+                        <dxb:BarItemLinkSeparator/>
+                        <dxb:BarCheckItemLink BarItemName="bErrors" BarItemDisplayMode="ContentAndGlyph"/>
+                    </dxb:Bar.ItemLinks>
+                </dxb:Bar>
+            </dxb:BarManager.Bars>
+            <DockPanel>
+                <dxb:BarContainerControl x:Name="bcMenu" DockPanel.Dock="Top"/>
+                <Border>
+                    <dx:BackgroundPanel>
+                        <ListView Background="Transparent" BorderThickness="0">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.ColumnHeaderContainerStyle>
+                                        <Style TargetType="GridViewColumnHeader">
+                                            <Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ListView}}"/>
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="IsHitTestVisible" Value="False"/>
+                                        </Style>
+                                    </GridView.ColumnHeaderContainerStyle>
+                                    <GridViewColumn Width="15"/>
+                                    <GridViewColumn Width="15"/>
+                                    <GridViewColumn Header="Name" Width="300"/>
+                                    <GridViewColumn Header="Description" Width="300"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </dx:BackgroundPanel>
+                </Border>
+            </DockPanel>
+        </dxb:BarManager>
+    </dx:BackgroundPanel>
+</UserControl>

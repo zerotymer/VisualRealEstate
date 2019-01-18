@@ -1,0 +1,52 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisualRealtor.Windows"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="VisualRealtor.Windows.SettingWindow"
+        mc:Ignorable="d"
+        Title="설정" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="test">
+            <ContentControl>
+                <dxe:ButtonEdit EditValue="1" AcceptsReturn="True" AcceptsTab="True" AllowDefaultButton="True">
+                    <dxe:ButtonInfo ButtonKind="Toggle" Content="XML" IsDefaultButton="True"/>
+                    <dxe:ButtonInfo ButtonKind="Toggle" Content="JSON"/>
+                </dxe:ButtonEdit>
+            </ContentControl>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <dxlc:LayoutControl Grid.Row="0">
+            <dxlc:LayoutGroup Header="LayoutGroup" View="Tabs">
+                <dxlc:LayoutGroup Header="일반"/>
+                <dxlc:LayoutGroup Header="오픈 API" View="Group">
+                    <dxlc:LayoutGroup Header="Bing" View="GroupBox">
+                        <dxlc:LayoutItem Label="BingMaps">
+                            <dxe:ButtonEdit EditValue="BingMaps" MaskType="None">
+                                <dxe:ButtonInfo ButtonKind="Toggle" Content="XML" IsDefaultButton="True"/>
+                                <dxe:ButtonInfo ButtonKind="Toggle" Content="JSON"/>
+                            </dxe:ButtonEdit>
+                        </dxlc:LayoutItem>
+
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="LayoutGroup" View="GroupBox"/>
+                <dxlc:LayoutGroup Header="LayoutGroup" View="GroupBox"/>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+        <Grid  Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <dx:SimpleButton Content="적용(A)" Height="28" Width="75" Margin="2" IsEnabled="False"/>
+                <dx:SimpleButton Content="확인(O)" Height="28" Width="75" Margin="2" IsEnabled="False"/>
+                <dx:SimpleButton Content="취소(C)" Height="28" Width="75" Margin="2" IsDefault="True" IsCancel="True"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>
