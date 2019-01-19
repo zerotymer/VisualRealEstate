@@ -42,7 +42,7 @@ namespace VisualRealtor.MVVM.Base
             }
         }
         #endregion
-
+        protected Dictionary<String, CommandViewModel> Commands = new Dictionary<String, CommandViewModel>();
 
 
         /// <summary>

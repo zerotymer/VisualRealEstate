@@ -355,6 +355,8 @@
   <ItemGroup>
     <Folder Include="Icons\16\" />
     <Folder Include="Icons\24\" />
+    <Folder Include="MVVM\ViewModels\" />
+    <Folder Include="MVVM\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />

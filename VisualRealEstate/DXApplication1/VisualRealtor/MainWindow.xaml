@@ -37,6 +37,7 @@
     </dx:ThemedWindow.Resources>
     
     <dxb:BarManager BarsSource="{Binding Bars}" Margin="0,-6,0,0" BarTemplateSelector="{StaticResource vs2017BarTemplateSelector}">
+        
         <Grid Margin="0,2,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
