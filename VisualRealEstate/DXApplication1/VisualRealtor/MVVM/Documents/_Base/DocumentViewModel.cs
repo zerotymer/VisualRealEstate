@@ -16,7 +16,15 @@ namespace VisualRealtor.MVVM.Documents
         #region for MVVM Bindings
         // Property
         // Outline
+
+        public string Description { get; protected set; }
+        public string FilePath { get; protected set; }
+        public string Footer { get; protected set; }
         #endregion
+
+
+        protected override string WorkspaceName { get { return "DocumentHost"; } }
+
         public DocumentViewModel()
         {
             IsClosed = false;
@@ -26,15 +34,13 @@ namespace VisualRealtor.MVVM.Documents
             DisplayName = displayName;
         }
 
-        public string Description { get; protected set; }
-        public string FilePath { get; protected set; }
-        public string Footer { get; protected set; }
-        protected override string WorkspaceName { get { return "DocumentHost"; } }
+        
+        
 
         public bool OpenFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Visual C# Files (*.cs)|*.cs|XAML Files (*.xaml)|*.xaml";
+            openFileDialog.Filter = "Visual Realtor Files (*.vrf)|*.vrf";
             openFileDialog.FilterIndex = 1;
             bool? dialogResult = openFileDialog.ShowDialog();
             bool dialogResultOK = dialogResult.HasValue && dialogResult.Value;
@@ -52,5 +58,25 @@ namespace VisualRealtor.MVVM.Documents
         void SetCodeLanguageProperties(string fileExtension)
         {
         }
+        /// <summary>
+        /// 현재 상태를 파일(.vrf)로 저장합니다.
+        /// </summary>
+        /// <returns></returns>
+        // UNDONE: 미구현
+        public bool SaveFile()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// 현재 화면을 이미지로 저장합니다.
+        /// </summary>
+        /// <returns></returns>
+        // UNDONE: 미구현
+        public bool SaveToImage()
+        {
+            return false;
+        }
+
     }
 }

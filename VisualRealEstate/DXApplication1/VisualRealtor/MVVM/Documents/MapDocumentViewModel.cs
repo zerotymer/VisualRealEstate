@@ -26,6 +26,7 @@ namespace VisualRealtor.MVVM.Documents
             SolutionExplorerItem item = new SolutionExplorerItem() { Name = "Test", Description = "NONO" };
             List<SolutionExplorerItem> list = new List<SolutionExplorerItem>() { item };
             //this.SolutionExplorerItems = new ReadOnlyCollection<SolutionExplorerItem>(list);
+            this.Description = "지도형식으로 표시합니다.";
         }
     }
 }
