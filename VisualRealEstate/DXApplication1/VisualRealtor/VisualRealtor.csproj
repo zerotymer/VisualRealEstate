@@ -156,19 +156,26 @@
     <Compile Include="MVVM\Components\BarItemTemplateSelector.cs" />
     <Compile Include="MVVM\Components\BarModel.cs" />
     <Compile Include="MVVM\Components\BarTemplateSelector.cs" />
+    <Compile Include="MVVM\Components\ErrorListViewModel.cs" />
     <Compile Include="MVVM\Components\OutlineView.xaml.cs">
       <DependentUpon>OutlineView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Components\OutlineViewModel.cs" />
     <Compile Include="MVVM\Base\PanelWorkspaceViewMdoel.cs" />
+    <Compile Include="MVVM\Components\OutputViewModel.cs" />
     <Compile Include="MVVM\Components\PropertiesView.xaml.cs">
       <DependentUpon>PropertiesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Components\PropertiesViewModel.cs" />
+    <Compile Include="MVVM\Components\PropertyItem.cs" />
     <Compile Include="MVVM\Components\RequestStackView.xaml.cs">
       <DependentUpon>RequestStackView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Components\RequestStackViewModel.cs" />
+    <Compile Include="MVVM\Components\SearchResultsViewModel.cs" />
+    <Compile Include="MVVM\Components\Solution.cs" />
+    <Compile Include="MVVM\Components\SolutionExplorerViewModel.cs" />
+    <Compile Include="MVVM\Components\SolutionItem.cs" />
     <Compile Include="MVVM\Components\SolutionView.xaml.cs">
       <DependentUpon>SolutionView.xaml</DependentUpon>
     </Compile>

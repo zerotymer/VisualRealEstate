@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using VisualRealtor.Contorols;
 using VisualRealtor.MVVM.Components;
 using VisualRealtor.MVVM.Documents;
-
+using DevExpress.Mvvm.POCO;
 
 namespace VisualRealtor.MVVM.Base
 {
@@ -19,7 +19,7 @@ namespace VisualRealtor.MVVM.Base
         #region for MVVM Bindings
         public ReadOnlyCollection<BarModel> Bars { get; protected set; }
         public ReadOnlyCollection<AccordionItem> ToolboxItems { get; protected set; }
-        //public OutputViewModel OutPutViewModel { get; protected set; }
+        public OutputViewModel OutputViewModel { get; protected set; }
         public PropertiesViewModel PropertiesViewModel { get; protected set; }
         public List<object> ExplorerItems { get; protected set; }
 
@@ -32,7 +32,8 @@ namespace VisualRealtor.MVVM.Base
         // RequestStack - App에서 구현
         public ObservableCollection<WorkspaceViewModel> workspaces;
         public ObservableCollection<WorkspaceViewModel> Workspaces
-        { get
+        {
+            get
             {
                 if (workspaces ==null) {
                     workspaces = new ObservableCollection<WorkspaceViewModel>();
@@ -41,8 +42,43 @@ namespace VisualRealtor.MVVM.Base
                 return workspaces;
             }
         }
+        PanelWorkspaceViewModel lastOpenedItem;
+        SolutionExplorerViewModel solutionExplorerViewModel;
+        public ErrorListViewModel ErrorListViewModel { get; private set; }
+        public SearchResultsViewModel SearchResultsViewModel { get; set; }
+        public SolutionExplorerViewModel SolutionExplorerViewModel
+        {
+            get
+            {
+                if (solutionExplorerViewModel == null)
+                {
+                    solutionExplorerViewModel = CreatePanelWorkspaceViewModel<SolutionExplorerViewModel>();
+                    //solutionExplorerViewModel.ItemOpening += SolutionExplorerViewModel_ItemOpening;
+                    solutionExplorerViewModel.Solution = Solution.Create();
+                    //OpenItem(solutionExplorerViewModel.Solution.LastOpenedItem.FilePath);
+                }
+                return solutionExplorerViewModel;
+            }
+        }
+        public ToolboxViewModel ToolboxViewModel { get; private set; }
+        //protected virtual IDockingSerializationDialogService SaveLoadLayoutService { get { return null; } }
         #endregion
+
         protected Dictionary<String, CommandViewModel> Commands = new Dictionary<String, CommandViewModel>();
+
+        public FrameViewModelBase()
+        {
+            ErrorListViewModel = CreatePanelWorkspaceViewModel<ErrorListViewModel>();
+            OutputViewModel = CreatePanelWorkspaceViewModel<OutputViewModel>();
+            PropertiesViewModel = CreatePanelWorkspaceViewModel<PropertiesViewModel>();
+            SearchResultsViewModel = CreatePanelWorkspaceViewModel<SearchResultsViewModel>();
+            ToolboxViewModel = CreatePanelWorkspaceViewModel<ToolboxViewModel>();
+            Bars = new ReadOnlyCollection<BarModel>(CreateBars());
+            InitDefaultLayout();
+        }
+
+
+
 
 
         /// <summary>
@@ -176,7 +212,6 @@ namespace VisualRealtor.MVVM.Base
         #endregion
 
 
-
         #region Toolbar 도구상자
         protected List<AccordionItem> CreateToolbox()
         {
@@ -250,6 +285,14 @@ namespace VisualRealtor.MVVM.Base
         {
             return null;
         }
+        protected T CreatePanelWorkspaceViewModel<T>() where T : PanelWorkspaceViewModel
+        {
+            return ViewModelSource<T>.Create();
+        }
         #endregion
+
+        private void InitDefaultLayout()
+        {
+        }
     }
 }

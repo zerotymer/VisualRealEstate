@@ -16,11 +16,4 @@ namespace VisualRealtor.MVVM.Components
         #endregion
     }
 
-    public class SolutionItem 
-    {
-        
-
-    }
-
-
 }
