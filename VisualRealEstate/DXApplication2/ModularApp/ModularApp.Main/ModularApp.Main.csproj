@@ -42,6 +42,9 @@
     <Reference Include="DevExpress.Xpf.Accordion.v18.2" />
     <Reference Include="DevExpress.Xpf.Ribbon.v18.2" />
     <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v18.2" />
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>C:\Program Files (x86)\Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -91,6 +94,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\APIManageLibrary\APIQueryLibrary.csproj">
+      <Project>{3973941b-9a10-4560-8321-a2e01d0187dd}</Project>
+      <Name>APIQueryLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModularApp.Common\ModularApp.Common.csproj">
       <Project>{aff38b24-ebef-41d1-8084-a39966dd736f}</Project>
       <Name>ModularApp.Common</Name>

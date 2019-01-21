@@ -39,3 +39,7 @@ D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\ModularApp.Modules.csproj.CopyComplete
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\ModularApp.Modules.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\ModularApp.Modules.pdb
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\Views\BingMapsView.g.cs
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\Views\BingMapsView.baml

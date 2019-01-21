@@ -1,0 +1,2 @@
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Tests\obj\Debug\ModularApp.Tests.csprojAssemblyReference.cache
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Tests\obj\Debug\ModularApp.Tests.csproj.CoreCompileInputs.cache

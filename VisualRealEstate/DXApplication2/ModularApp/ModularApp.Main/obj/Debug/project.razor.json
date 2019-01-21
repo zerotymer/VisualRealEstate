@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "d:\\Users\\zerot\\Documents\\GitHub\\VisualRealEstate\\VisualRealEstate\\DXApplication2\\ModularApp\\ModularApp.Main\\ModularApp.Main.csproj",
+  "TargetFramework": "v4.5.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

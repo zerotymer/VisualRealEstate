@@ -35,6 +35,9 @@
     <Reference Include="DevExpress.Data.v18.2" />
     <Reference Include="DevExpress.Mvvm.v18.2" />
     <Reference Include="DevExpress.Xpf.Core.v18.2" />
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>C:\Program Files (x86)\Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -53,19 +56,32 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\BingMapsViewModel.cs" />
     <Compile Include="ViewModels\ModuleViewModel.cs" />
+    <Compile Include="ViewModels\ModuleViewModelBase.cs" />
+    <Compile Include="Views\BingMapsView.xaml.cs">
+      <DependentUpon>BingMapsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ModuleView.xaml.cs">
       <DependentUpon>ModuleView.xaml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\BingMapsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\APIManageLibrary\APIQueryLibrary.csproj">
+      <Project>{3973941b-9a10-4560-8321-a2e01d0187dd}</Project>
+      <Name>APIQueryLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModularApp.Common\ModularApp.Common.csproj">
       <Project>{8f61d2c9-7956-439c-8936-b12eaa861b12}</Project>
       <Name>ModularApp.Common</Name>

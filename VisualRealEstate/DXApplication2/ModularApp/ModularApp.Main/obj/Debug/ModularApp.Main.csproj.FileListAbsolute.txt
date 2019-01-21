@@ -68,3 +68,5 @@ D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\obj\Debug\ModularApp.Main.csproj.CopyComplete
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\obj\Debug\ModularApp.Main.exe
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\obj\Debug\ModularApp.Main.pdb
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\Microsoft.Maps.MapControl.WPF.xml

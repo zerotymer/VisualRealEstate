@@ -1,6 +1,6 @@
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\bin\Debug\ModularApp.Common.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\bin\Debug\ModularApp.Common.pdb
-D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\obj\Debug\ModularApp.Common.csprojAssemblyReference.cache
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\obj\Debug\ModularApp.Common.csproj.CoreCompileInputs.cache
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\obj\Debug\ModularApp.Common.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\obj\Debug\ModularApp.Common.pdb
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Common\obj\Debug\ModularApp.Common.csprojAssemblyReference.cache

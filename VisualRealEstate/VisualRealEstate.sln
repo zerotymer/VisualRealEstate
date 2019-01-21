@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularApp.Common", "DXAppl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularApp.Modules", "DXApplication2\ModularApp\ModularApp.Modules\ModularApp.Modules.csproj", "{1BC7139A-ADE6-4C30-A450-FF7F91ACB10B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularApp.Tests", "DXApplication2\ModularApp\ModularApp.Tests\ModularApp.Tests.csproj", "{011B4A2D-7E85-404C-BFA7-9EA5CD50F3EA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{1BC7139A-ADE6-4C30-A450-FF7F91ACB10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC7139A-ADE6-4C30-A450-FF7F91ACB10B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC7139A-ADE6-4C30-A450-FF7F91ACB10B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{011B4A2D-7E85-404C-BFA7-9EA5CD50F3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{011B4A2D-7E85-404C-BFA7-9EA5CD50F3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{011B4A2D-7E85-404C-BFA7-9EA5CD50F3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{011B4A2D-7E85-404C-BFA7-9EA5CD50F3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
