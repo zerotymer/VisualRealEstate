@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using DevExpress.Data.Helpers;
+using DevExpress.Xpf;
+using System.Linq;
 
 namespace ModularApp.Modules.Views
 {

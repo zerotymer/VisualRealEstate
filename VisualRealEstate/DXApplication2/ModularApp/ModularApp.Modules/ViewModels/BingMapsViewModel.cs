@@ -10,16 +10,28 @@ using ModularApp.Common;
 using Microsoft.Maps;
 using Microsoft.Maps.MapControl.WPF;
 using Microsoft.Maps.MapControl.WPF.Core;
+using System.ComponentModel;
 
 namespace ModularApp.Modules.ViewModels
 {
     [POCOViewModel]
     public class BingMapsViewModel : ModuleViewModelBase, IDocumentModule, ISupportState<BingMapsViewModel.Info>
     {
-        public virtual MapMode ViewMode { get; set; }
+        #region Properties
+        /// <summary xml:lang="kr"></summary>
+        /// <summary xml:lang="en"></summary>
+        /// <example>Aerial, </example>
+        [Category("보기"), Description("보기 방식을 변경합니다.")]
+        public virtual MapMode Mode { get; set; }
+
+        /// <summary xml:lang="kr">자격증명을 가져오거나 설정합니다. (Bing Maps Key)</summary>
+        /// <summary xml:lang="en">Gets or sets the credentials (Bing Maps Key)</summary>
+        [Category("Settings"), Description("자격증명을 가져오거나 설정합니다. (Bing Maps Key)")]
         public virtual CredentialsProvider ServCredentials { get; set; }
 
+        // private
         public virtual string Key { get; set; }
+        #endregion
 
         public static BingMapsViewModel Create(string caption, string content, string key = "")
         {
@@ -29,7 +41,7 @@ namespace ModularApp.Modules.ViewModels
                 Content = content,
                 Key = key,
                 ServCredentials = new ApplicationIdCredentialsProvider(key),
-                ViewMode = new AerialMode()
+                Mode = new AerialMode()
             });
         }
         protected BingMapsViewModel() { }

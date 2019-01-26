@@ -52,20 +52,27 @@ namespace ModularApp.Main
         }
         protected virtual void RegisterModules()
         {
+            // 메인
             Manager.Register(Regions.MainWindow, new Module(AppModules.Main, MainViewModel.Create, typeof(MainView)));
 
+            // 네비게이션
             Manager.Register(Regions.Navigation, new Module(AppModules.Module1, () => new NavigationItem("Module1")));
             Manager.Register(Regions.Navigation, new Module(AppModules.Module2, () => new NavigationItem("Module2")));
             Manager.Register(Regions.Navigation, new Module(AppModules.BingMaps, () => new NavigationItem("BingMaps")));
             Manager.Register(Regions.Navigation, new Module(AppModules.DevMap, () => new NavigationItem("DevMap")));
+            Manager.Register(Regions.Navigation, new Module(AppModules.Sheet, () => new NavigationItem("Sheet")));
 
+            // 문서
             Manager.Register(Regions.Documents, new Module(AppModules.Module1, () => ModuleViewModel.Create("Module1", "Module1 Content"), typeof(ModuleView)));
             Manager.Register(Regions.Documents, new Module(AppModules.Module2, () => ModuleViewModel.Create("Module2", "Module2 Content"), typeof(ModuleView)));
             Manager.Register(Regions.Documents, new Module(AppModules.BingMaps, () => BingMapsViewModel.Create("BingMaps", "TEST", API.APIKEY_BINGMAP), typeof(BingMapsView)));
             Manager.Register(Regions.Documents, new Module(AppModules.DevMap, () => DevMapViewModel.Create("DevMap", "Test"), typeof(DevMapView)));
+            Manager.Register(Regions.Documents, new Module(AppModules.Sheet, () => SheetViewModel.Create("Sheet", "Test"), typeof(SheetView)));
 
+            // 출력
             Manager.Register(Regions.Outputs, new Module(AppModules.Output, () => OutputViewModel.Create(), typeof(OutputView)));
 
+            // 속성
             Manager.Register(Regions.Properties, new Module(AppModules.Property, () => PropertyViewModel.Create("Property", "Test"), typeof(PropertyView)));
         }
         protected virtual bool RestoreState()
@@ -79,14 +86,20 @@ namespace ModularApp.Main
         }
         protected virtual void InjectModules()
         {
+            // 메인
             Manager.Inject(Regions.MainWindow, AppModules.Main);
 
+            // 네비게이션
             Manager.Inject(Regions.Navigation, AppModules.Module1);
             Manager.Inject(Regions.Navigation, AppModules.Module2);
             Manager.Inject(Regions.Navigation, AppModules.BingMaps);
             Manager.Inject(Regions.Navigation, AppModules.DevMap);
+            Manager.Inject(Regions.Navigation, AppModules.Sheet);
 
+            // 출력
             Manager.Inject(Regions.Outputs, AppModules.Output);
+
+            // 속성
             Manager.Inject(Regions.Properties, AppModules.Property);
         }
         protected virtual void ConfigureNavigation()

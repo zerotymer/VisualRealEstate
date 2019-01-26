@@ -6,12 +6,19 @@
              xmlns:views="clr-namespace:ModularApp.Modules.Views"
              xmlns:viewModels="clr-namespace:ModularApp.Modules.ViewModels"
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
-             xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" x:Class="ModularApp.Modules.Views.PropertyView"
+             xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" 
+             x:Class="ModularApp.Modules.Views.PropertyView"
              mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="200"
              d:DataContext="{dxmvvm:ViewModelSource {x:Type viewModels:PropertyViewModel}}">
-    <Grid>
-
-        <dxprg:PropertyGridControl />
-
-    </Grid>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ModularApp.Modules;component/Resources/PropertyResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <DockPanel>
+        <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"/>
+    </DockPanel>
 </UserControl>

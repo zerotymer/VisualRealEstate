@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-51708112708
+7-637977699
 
-161568563067
-27-1666493683
-Views\BingMapsView.xaml;Views\DevMapView.xaml;Views\ModuleView.xaml;Views\OutputView.xaml;Views\PropertyView.xaml;
+19-1181337552
+29-1205621765
+Views\BingMapsView.xaml;Views\DevMapView.xaml;Views\ModuleView.xaml;Views\OutputView.xaml;Views\PropertyView.xaml;Resources\PropertyResources.xaml;Views\SheetView.xaml;
 
 True
 

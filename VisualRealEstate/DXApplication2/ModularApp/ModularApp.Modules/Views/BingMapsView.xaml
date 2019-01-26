@@ -10,6 +10,6 @@
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" 
              d:DataContext="{dxmvvm:ViewModelSource viewModels:BingMapsViewModel}">
     <Grid>
-        <map:Map Mode="{Binding ViewMode, Mode=TwoWay}" CredentialsProvider="{Binding ServCredentials, Mode=OneTime}"/>
+        <map:Map Mode="{Binding Mode, Mode=TwoWay}" CredentialsProvider="{Binding ServCredentials, Mode=OneTime}"/>
     </Grid>
 </UserControl>
