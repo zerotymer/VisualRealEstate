@@ -14,15 +14,12 @@ using Microsoft.Maps.MapControl.WPF.Core;
 namespace ModularApp.Modules.ViewModels
 {
     [POCOViewModel]
-    public class BingMapsViewModel : IDocumentModule, ISupportState<BingMapsViewModel.Info>
+    public class BingMapsViewModel : ModuleViewModelBase, IDocumentModule, ISupportState<BingMapsViewModel.Info>
     {
         public virtual MapMode ViewMode { get; set; }
         public virtual CredentialsProvider ServCredentials { get; set; }
 
         public virtual string Key { get; set; }
-        public virtual string Caption { get; set; }
-        public virtual bool IsActive { get; set; }
-        public virtual string Content { get; set; }
 
         public static BingMapsViewModel Create(string caption, string content, string key = "")
         {

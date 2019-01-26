@@ -6,25 +6,9 @@ using ModularApp.Common;
 
 namespace ModularApp.Modules.ViewModels
 {
-    public class DevMapViewModel : IDocumentModule, ISupportState<DevMapViewModel.Info>
+    public class DevMapViewModel : ModuleViewModelBase, IDocumentModule, ISupportState<DevMapViewModel.Info>
     {
 
-
-
-
-
-        public virtual string Caption { get; set; }
-        public virtual bool IsActive { get; set; }
-        public virtual string Content { get; set; }
-
-        public static DevMapViewModel Create(string caption, string content)
-        {
-            return ViewModelSource.Create(() => new DevMapViewModel()
-            {
-                Caption = caption,
-                Content = content
-            });
-        }
         protected DevMapViewModel() { }
 
 

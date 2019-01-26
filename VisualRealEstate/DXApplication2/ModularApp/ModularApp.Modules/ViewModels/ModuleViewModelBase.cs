@@ -5,7 +5,7 @@ using ModularApp.Common;
 
 namespace ModularApp.Modules.ViewModels
 {
-    public class ModuleViewModelBase : IDocumentModule, ISupportState<ModuleViewModelBase.Info>
+    public class ModuleViewModelBase : IDocumentModule
     {
         public virtual string Caption { get; set; }
         public virtual bool IsActive { get; set; }
@@ -20,27 +20,5 @@ namespace ModularApp.Modules.ViewModels
             });
         }
         protected ModuleViewModelBase() { }
-
-        #region Serialization
-        [Serializable]
-        public class Info
-        {
-            public string Content { get; set; }
-            public string Caption { get; set; }
-        }
-        Info ISupportState<Info>.SaveState()
-        {
-            return new Info()
-            {
-                Content = this.Content,
-                Caption = this.Caption,
-            };
-        }
-        void ISupportState<Info>.RestoreState(Info state)
-        {
-            this.Content = state.Content;
-            this.Caption = state.Caption;
-        }
-        #endregion
     }
 }

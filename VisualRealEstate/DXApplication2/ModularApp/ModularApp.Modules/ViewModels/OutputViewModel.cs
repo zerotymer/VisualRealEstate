@@ -5,20 +5,14 @@ using ModularApp.Common;
 
 namespace ModularApp.Modules.ViewModels
 {
-    public class OutputViewModel : IDocumentModule, ISupportState<OutputViewModel.Info>
+    public class OutputViewModel : ModuleViewModelBase, IDocumentModule, ISupportState<OutputViewModel.Info>
     {
         public static OutputViewModel Create()
         {
             return ViewModelSource.Create(() => new OutputViewModel());
         }
 
-
-
-        public virtual string Caption { get; set; }
-        public virtual bool IsActive { get; set; }
-        public virtual string Content { get; set; }
-
-        public static OutputViewModel Create(string caption, string content)
+        public static new OutputViewModel Create(string caption, string content)
         {
             return ViewModelSource.Create(() => new OutputViewModel()
             {

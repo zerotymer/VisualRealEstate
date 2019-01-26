@@ -42,31 +42,36 @@
             
             <!--#region content-->
             <dxdo:DockLayoutManager ClosedPanelsBarVisibility="Never" FloatingMode="Desktop">
-                <dxdo:LayoutGroup Orientation="Vertical">
-                    <dxdo:LayoutGroup ItemWidth="3*">
-                        <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation">
-                            <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem">
-                                <dxa:AccordionItem dxmvvm:UIRegion.Region="{x:Static common:Regions.Navigation}" Header="Modules">
-                                    <dxa:AccordionItem.ItemContainerStyle>
-                                        <Style TargetType="dxa:AccordionItem">
-                                            <Setter Property="Header" Value="{Binding Caption}" />
-                                        </Style>
-                                    </dxa:AccordionItem.ItemContainerStyle>
-                                </dxa:AccordionItem>
-                            </dxa:AccordionControl>
-                        </dxdo:LayoutPanel>
-                        
-                        <dxdo:DocumentGroup DestroyOnClosingChildren="False" dxmvvm:UIRegion.Region="{x:Static common:Regions.Documents}" Name="Documents">
-                            <dxdo:DocumentGroup.ItemStyle>
-                                <Style TargetType="dxdo:LayoutPanel">
-                                    <Setter Property="Caption" Value="{Binding Caption}" />
-                                    <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}" />
-                                    <Setter Property="ClosingBehavior" Value="ImmediatelyRemove" />
-                                </Style>
-                            </dxdo:DocumentGroup.ItemStyle>
-                        </dxdo:DocumentGroup>
+                <dxdo:LayoutGroup Orientation="Horizontal">
+                    <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation">
+                        <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem">
+                            <dxa:AccordionItem dxmvvm:UIRegion.Region="{x:Static common:Regions.Navigation}" Header="Modules">
+                                <dxa:AccordionItem.ItemContainerStyle>
+                                    <Style TargetType="dxa:AccordionItem">
+                                        <Setter Property="Header" Value="{Binding Caption}" />
+                                    </Style>
+                                </dxa:AccordionItem.ItemContainerStyle>
+                            </dxa:AccordionItem>
+                        </dxa:AccordionControl>
+                    </dxdo:LayoutPanel>
+                    
+                    <dxdo:LayoutGroup Orientation="Vertical" ItemHeight="3*">
+                        <dxdo:LayoutGroup Orientation="Horizontal" ItemWidth="3*">
+                            <dxdo:DocumentGroup DestroyOnClosingChildren="False" dxmvvm:UIRegion.Region="{x:Static common:Regions.Documents}" Name="Documents">
+                                <dxdo:DocumentGroup.ItemStyle>
+                                    <Style TargetType="dxdo:LayoutPanel">
+                                        <Setter Property="Caption" Value="{Binding Caption}" />
+                                        <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}" />
+                                        <Setter Property="ClosingBehavior" Value="ImmediatelyRemove" />
+                                    </Style>
+                                </dxdo:DocumentGroup.ItemStyle>
+                            </dxdo:DocumentGroup>
+
+                            <dxdo:LayoutPanel Caption="속성" ItemWidth="170" dxmvvm:UIRegion.Region="{x:Static common:Regions.Properties}"/>
                         </dxdo:LayoutGroup>
-                    <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120" dxmvvm:UIRegion.Region="{x:Static common:Regions.Outputs}" />
+                        
+                        <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120" dxmvvm:UIRegion.Region="{x:Static common:Regions.Outputs}" />
+                    </dxdo:LayoutGroup>
                 </dxdo:LayoutGroup>
             </dxdo:DockLayoutManager>
             <!--#endregion-->

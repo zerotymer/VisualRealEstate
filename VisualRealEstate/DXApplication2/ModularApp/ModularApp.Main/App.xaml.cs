@@ -65,6 +65,8 @@ namespace ModularApp.Main
             Manager.Register(Regions.Documents, new Module(AppModules.DevMap, () => DevMapViewModel.Create("DevMap", "Test"), typeof(DevMapView)));
 
             Manager.Register(Regions.Outputs, new Module(AppModules.Output, () => OutputViewModel.Create(), typeof(OutputView)));
+
+            Manager.Register(Regions.Properties, new Module(AppModules.Property, () => PropertyViewModel.Create("Property", "Test"), typeof(PropertyView)));
         }
         protected virtual bool RestoreState()
         {
@@ -85,6 +87,7 @@ namespace ModularApp.Main
             Manager.Inject(Regions.Navigation, AppModules.DevMap);
 
             Manager.Inject(Regions.Outputs, AppModules.Output);
+            Manager.Inject(Regions.Properties, AppModules.Property);
         }
         protected virtual void ConfigureNavigation()
         {

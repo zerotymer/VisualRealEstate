@@ -10,5 +10,6 @@
         public static string DevMap { get { return "DevMap"; } }
 
         public static string Output { get { return "Output"; } }
+        public static string Property { get { return "Property"; } }
     }
 }

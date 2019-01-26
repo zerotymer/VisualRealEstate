@@ -108,3 +108,11 @@ D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\ru\DevExpress.Office.v18.2.Core.resources.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\Views\DevMapView.g.cs
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\Views\DevMapView.baml
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\Views\PropertyView.g.cs
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\Views\PropertyView.baml
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\DevExpress.Xpf.PropertyGrid.v18.2.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\DevExpress.Xpf.PropertyGrid.v18.2.xml
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\de\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\es\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\ja\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\bin\Debug\ru\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll

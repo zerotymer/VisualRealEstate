@@ -118,3 +118,9 @@ D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\es\DevExpress.Office.v18.2.Core.resources.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\ja\DevExpress.Office.v18.2.Core.resources.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\ru\DevExpress.Office.v18.2.Core.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\DevExpress.Xpf.PropertyGrid.v18.2.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\DevExpress.Xpf.PropertyGrid.v18.2.xml
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\de\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\es\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\ja\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\ru\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
