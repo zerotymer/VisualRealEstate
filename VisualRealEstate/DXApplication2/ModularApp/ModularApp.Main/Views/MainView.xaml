@@ -13,10 +13,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:ModularApp.Main.ViewModels"
     xmlns:views="clr-namespace:ModularApp.Main.Views"
-    mc:Ignorable="d"
-    d:DataContext="{dxmvvm:ViewModelSource viewModels:MainViewModel}"
-    d:DesignHeight="500"
-    d:DesignWidth="800">
+    mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="800"
+    d:DataContext="{dxmvvm:ViewModelSource viewModels:MainViewModel}">
 
     <dxmvvm:Interaction.Behaviors>
         <dxmvvm:VisualStateService />
@@ -46,7 +44,7 @@
             <dxdo:DockLayoutManager ClosedPanelsBarVisibility="Never" FloatingMode="Desktop">
                 <dxdo:LayoutGroup Orientation="Vertical">
                     <dxdo:LayoutGroup ItemWidth="3*">
-                        <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="Navigation" ItemWidth="200" Name="Navigation">
+                        <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation">
                             <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem">
                                 <dxa:AccordionItem dxmvvm:UIRegion.Region="{x:Static common:Regions.Navigation}" Header="Modules">
                                     <dxa:AccordionItem.ItemContainerStyle>
@@ -68,7 +66,7 @@
                             </dxdo:DocumentGroup.ItemStyle>
                         </dxdo:DocumentGroup>
                         </dxdo:LayoutGroup>
-                    <dxdo:LayoutPanel AutoHidden="True" Caption="Output" ItemHeight="120" />
+                    <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120" dxmvvm:UIRegion.Region="{x:Static common:Regions.Outputs}" />
                 </dxdo:LayoutGroup>
             </dxdo:DockLayoutManager>
             <!--#endregion-->

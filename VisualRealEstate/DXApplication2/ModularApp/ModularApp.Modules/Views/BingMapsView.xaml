@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
-             xmlns:local="clr-namespace:ModularApp.Modules.Views"
+             xmlns:views="clr-namespace:ModularApp.Modules.Views"
              xmlns:viewModels="clr-namespace:ModularApp.Modules.ViewModels"
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" 

@@ -24,7 +24,7 @@ namespace ModularApp.Modules.ViewModels
         public virtual bool IsActive { get; set; }
         public virtual string Content { get; set; }
 
-        public static BingMapsViewModel Create(string caption, string content, string key = "yR3oG8fAfa99DeQqDIVe~AqfQuTkTfMqdChSoumqFow~ApCNPT9Kt1oz7KGtHfEmfx3O1eLsFSMqtwqqrQk3na7VQHG3HWRxWwsCJhwY8M5F")
+        public static BingMapsViewModel Create(string caption, string content, string key = "")
         {
             return ViewModelSource.Create(() => new BingMapsViewModel()
             {

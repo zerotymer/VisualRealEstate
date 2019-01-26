@@ -219,12 +219,6 @@
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="_ViewModels\Items\ToolboxViewModel.cs" />
-    <Compile Include="_Views\VWorldMap.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="_Views\VWorldMapControl.xaml.cs">
-      <DependentUpon>VWorldMapControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
@@ -281,10 +275,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_ViewModels\TestMap.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="_Views\VWorldMapControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

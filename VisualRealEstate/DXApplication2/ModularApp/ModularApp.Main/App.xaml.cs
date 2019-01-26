@@ -55,11 +55,16 @@ namespace ModularApp.Main
             Manager.Register(Regions.MainWindow, new Module(AppModules.Main, MainViewModel.Create, typeof(MainView)));
 
             Manager.Register(Regions.Navigation, new Module(AppModules.Module1, () => new NavigationItem("Module1")));
-            Manager.Register(Regions.Documents, new Module(AppModules.Module1, () => ModuleViewModel.Create("Module1", "Module1 Content"), typeof(ModuleView)));
             Manager.Register(Regions.Navigation, new Module(AppModules.Module2, () => new NavigationItem("Module2")));
-            Manager.Register(Regions.Documents, new Module(AppModules.Module2, () => ModuleViewModel.Create("Module2", "Module2 Content"), typeof(ModuleView)));
             Manager.Register(Regions.Navigation, new Module(AppModules.BingMaps, () => new NavigationItem("BingMaps")));
-            Manager.Register(Regions.Documents, new Module(AppModules.BingMaps, () => BingMapsViewModel.Create("BingMaps", "TEST"), typeof(BingMapsView)));
+            Manager.Register(Regions.Navigation, new Module(AppModules.DevMap, () => new NavigationItem("DevMap")));
+
+            Manager.Register(Regions.Documents, new Module(AppModules.Module1, () => ModuleViewModel.Create("Module1", "Module1 Content"), typeof(ModuleView)));
+            Manager.Register(Regions.Documents, new Module(AppModules.Module2, () => ModuleViewModel.Create("Module2", "Module2 Content"), typeof(ModuleView)));
+            Manager.Register(Regions.Documents, new Module(AppModules.BingMaps, () => BingMapsViewModel.Create("BingMaps", "TEST", API.APIKEY_BINGMAP), typeof(BingMapsView)));
+            Manager.Register(Regions.Documents, new Module(AppModules.DevMap, () => DevMapViewModel.Create("DevMap", "Test"), typeof(DevMapView)));
+
+            Manager.Register(Regions.Outputs, new Module(AppModules.Output, () => OutputViewModel.Create(), typeof(OutputView)));
         }
         protected virtual bool RestoreState()
         {
@@ -77,6 +82,9 @@ namespace ModularApp.Main
             Manager.Inject(Regions.Navigation, AppModules.Module1);
             Manager.Inject(Regions.Navigation, AppModules.Module2);
             Manager.Inject(Regions.Navigation, AppModules.BingMaps);
+            Manager.Inject(Regions.Navigation, AppModules.DevMap);
+
+            Manager.Inject(Regions.Outputs, AppModules.Output);
         }
         protected virtual void ConfigureNavigation()
         {
