@@ -1,4 +1,8 @@
 ﻿using DevExpress.Mvvm.POCO;
+using DevExpress.Xpf.Docking.Base;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows;
 
 namespace ModularApp.Main.ViewModels
 {
@@ -8,5 +12,12 @@ namespace ModularApp.Main.ViewModels
         {
             return ViewModelSource.Create(() => new MainViewModel());
         }
+
+        public void SelectedItemChanged(SelectedItemChangedEventArgs arg)
+        {
+            SelectedItem = arg.Item;
+        }
+
+        public object SelectedItem { get; set; }
     }
 }

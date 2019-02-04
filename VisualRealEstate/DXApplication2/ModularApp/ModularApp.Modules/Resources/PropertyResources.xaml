@@ -3,7 +3,9 @@
                     xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
                     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
                     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
-                    xmlns:local="clr-namespace:ModularApp.Modules.Resources">
+                    xmlns:local="clr-namespace:ModularApp.Modules.Resources"
+                    xmlns:views="clr-namespace:ModularApp.Modules.Views"
+                    xmlns:viewModels="clr-namespace:ModularApp.Modules.ViewModels">
     
     <Style x:Key="descriptionContainerStyle" TargetType="dxprg:PropertyDescriptionPresenterControl">
         <Setter Property="ShowSelectedRowHeader" Value="False"/>
@@ -11,6 +13,10 @@
     </Style>
     
     <dxe:BytesToImageSourceConverter x:Key="imageConverter" />
+
+    <viewModels:PropertyEditorsViewModel x:Key="DataProvider"/>
+    <viewModels:PropertyEditorsTemplateSelector x:Key="EditorsTemplateSelector"/>
+    <viewModels:PropertyDescriptorToDisplayNameConverter x:Key="DisplayNameConverter"/>
 
     <!--#region DataTemplates-->
     <DataTemplate x:Key="RegExTextEdit">
@@ -237,6 +243,17 @@
             <dxprg:PropertyDefinition.EditSettings>
                 <dxe:HyperlinkEditSettings AllowAutoNavigate="True" NavigationUrlFormat="https://www.google.com/search?newwindow=1&amp;q={0}"/>
             </dxprg:PropertyDefinition.EditSettings>
+        </dxprg:PropertyDefinition>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BingMapsMode">
+        <dxprg:PropertyDefinition>
+            <dxprg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" ItemsSource="{Binding Modes, Source={StaticResource NWindDataLoader}}"
+                              AutoComplete="True" IsTextEditable="True" ImmediatePopup="True" />
+                </DataTemplate>
+            </dxprg:PropertyDefinition.CellTemplate>
         </dxprg:PropertyDefinition>
     </DataTemplate>
     <!--#endregion-->

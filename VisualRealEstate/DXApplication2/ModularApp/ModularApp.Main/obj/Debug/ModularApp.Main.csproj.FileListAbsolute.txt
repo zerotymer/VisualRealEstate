@@ -124,3 +124,5 @@ D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\es\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\ja\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
 D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\bin\Debug\ru\DevExpress.Xpf.PropertyGrid.v18.2.resources.dll
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Main\obj\Debug\Resources\PropertyResources.baml

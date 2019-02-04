@@ -7,6 +7,5 @@
         public static string Navigation { get { return "Navigation"; } }
 
         public static string Outputs { get { return "Outputs"; } }
-        public static string Properties { get { return "Properties"; } }
     }
 }

@@ -9,6 +9,7 @@
     xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
     xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
     xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
     xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:ModularApp.Main.ViewModels"
@@ -16,6 +17,14 @@
     mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="800"
     d:DataContext="{dxmvvm:ViewModelSource viewModels:MainViewModel}">
 
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ModularApp.Main;component/Resources/PropertyResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
     <dxmvvm:Interaction.Behaviors>
         <dxmvvm:VisualStateService />
     </dxmvvm:Interaction.Behaviors>
@@ -58,19 +67,28 @@
                     <dxdo:LayoutGroup Orientation="Vertical" ItemHeight="3*">
                         <dxdo:LayoutGroup Orientation="Horizontal" ItemWidth="3*">
                             <dxdo:DocumentGroup DestroyOnClosingChildren="False" dxmvvm:UIRegion.Region="{x:Static common:Regions.Documents}" Name="Documents">
+                                <dxmvvm:Interaction.Behaviors>
+                                    <dxmvvm:EventToCommand EventName="SelectedItemChanged" Command="{Binding SelectedItemChangedCommand}" PassEventArgsToCommand="True"/>
+                                </dxmvvm:Interaction.Behaviors>
                                 <dxdo:DocumentGroup.ItemStyle>
                                     <Style TargetType="dxdo:LayoutPanel">
-                                        <Setter Property="Caption" Value="{Binding Caption}" />
-                                        <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}" />
-                                        <Setter Property="ClosingBehavior" Value="ImmediatelyRemove" />
+                                        <Setter Property="Caption" Value="{Binding Caption}"/>
+                                        <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}"/>
+                                        <Setter Property="ClosingBehavior" Value="ImmediatelyRemove"/>
                                     </Style>
                                 </dxdo:DocumentGroup.ItemStyle>
                             </dxdo:DocumentGroup>
 
-                            <dxdo:LayoutPanel Caption="속성" ItemWidth="170" dxmvvm:UIRegion.Region="{x:Static common:Regions.Properties}"/>
+                            <dxdo:LayoutPanel Caption="속성" ItemWidth="170">
+                                <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"
+                                   SelectedObject="{Binding Path=SelectedItem, ElementName=}"
+                                   PropertyDefinitionsSource="{Binding Path=Properties, Source={StaticResource DataProvider}}"
+                                   PropertyDefinitionTemplateSelector="{StaticResource EditorsTemplateSelector}"
+                                   PropertyDefinitionStyle="{StaticResource descriptionContainerStyle}"/>
+                            </dxdo:LayoutPanel>
                         </dxdo:LayoutGroup>
                         
-                        <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120" dxmvvm:UIRegion.Region="{x:Static common:Regions.Outputs}" />
+                        <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120"/>
                     </dxdo:LayoutGroup>
                 </dxdo:LayoutGroup>
             </dxdo:DockLayoutManager>

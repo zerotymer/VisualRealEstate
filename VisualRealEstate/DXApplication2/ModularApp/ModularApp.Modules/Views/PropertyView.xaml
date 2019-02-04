@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:ModularApp.Modules.Views"
              xmlns:viewModels="clr-namespace:ModularApp.Modules.ViewModels"
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
-             xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" 
+             xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
              x:Class="ModularApp.Modules.Views.PropertyView"
              mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="200"
              d:DataContext="{dxmvvm:ViewModelSource {x:Type viewModels:PropertyViewModel}}">
@@ -19,6 +19,10 @@
     </UserControl.Resources>
     
     <DockPanel>
-        <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"/>
+        <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"
+                                   SelectedObject="{Binding Path=Data, Source={StaticResource DataProvider}}"
+                                   PropertyDefinitionsSource="{Binding Path=Properties, Source={StaticResource DataProvider}}"
+                                   PropertyDefinitionTemplateSelector="{StaticResource EditorsTemplateSelector}"
+                                   PropertyDefinitionStyle="{StaticResource descriptionContainerStyle}"/>
     </DockPanel>
 </UserControl>

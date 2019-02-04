@@ -73,7 +73,7 @@ namespace ModularApp.Main
             Manager.Register(Regions.Outputs, new Module(AppModules.Output, () => OutputViewModel.Create(), typeof(OutputView)));
 
             // 속성
-            Manager.Register(Regions.Properties, new Module(AppModules.Property, () => PropertyViewModel.Create("Property", "Test"), typeof(PropertyView)));
+            //Manager.Register(Regions.Properties, new Module(AppModules.Property, () => PropertyViewModel.Create("Property", "Test"), typeof(PropertyView)));
         }
         protected virtual bool RestoreState()
         {
@@ -100,7 +100,7 @@ namespace ModularApp.Main
             Manager.Inject(Regions.Outputs, AppModules.Output);
 
             // 속성
-            Manager.Inject(Regions.Properties, AppModules.Property);
+            //Manager.Inject(Regions.Properties, AppModules.Property);
         }
         protected virtual void ConfigureNavigation()
         {
