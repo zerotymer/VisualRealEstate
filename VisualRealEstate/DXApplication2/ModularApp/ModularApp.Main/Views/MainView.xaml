@@ -58,6 +58,7 @@
                                 <dxa:AccordionItem.ItemContainerStyle>
                                     <Style TargetType="dxa:AccordionItem">
                                         <Setter Property="Header" Value="{Binding Caption}" />
+                                        <Setter Property="Command" Value="{Binding SelectedItemChangedCommand}"/>
                                     </Style>
                                 </dxa:AccordionItem.ItemContainerStyle>
                             </dxa:AccordionItem>
@@ -81,7 +82,7 @@
 
                             <dxdo:LayoutPanel Caption="속성" ItemWidth="170">
                                 <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"
-                                   SelectedObject="{Binding Path=SelectedItem, ElementName=}"
+                                   SelectedObject="{Binding Path=SelectedItem, Mode=TwoWay}"
                                    PropertyDefinitionsSource="{Binding Path=Properties, Source={StaticResource DataProvider}}"
                                    PropertyDefinitionTemplateSelector="{StaticResource EditorsTemplateSelector}"
                                    PropertyDefinitionStyle="{StaticResource descriptionContainerStyle}"/>
