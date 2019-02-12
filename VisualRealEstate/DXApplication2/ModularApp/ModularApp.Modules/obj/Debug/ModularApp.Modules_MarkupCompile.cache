@@ -4,17 +4,17 @@
 library
 C#
 .cs
-d:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\
+D:\Users\zerot\Documents\GitHub\VisualRealEstate\VisualRealEstate\DXApplication2\ModularApp\ModularApp.Modules\obj\Debug\
 ModularApp.Modules
 none
 false
 DEBUG;TRACE
 
-71212000888
+7-637977699
 
-20-1435247555
-29-1124698314
+16595594540
+2918802074
 Views\BingMapsView.xaml;Views\DevMapView.xaml;Views\ModuleView.xaml;Views\OutputView.xaml;Views\PropertyView.xaml;Resources\PropertyResources.xaml;Views\SheetView.xaml;
 
-True
+False
 
