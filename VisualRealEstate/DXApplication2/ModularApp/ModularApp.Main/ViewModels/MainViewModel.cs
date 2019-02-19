@@ -15,9 +15,10 @@ namespace ModularApp.Main.ViewModels
 
         public void SelectedItemChanged(SelectedItemChangedEventArgs arg)
         {
-            SelectedItem = arg.Item;
+            if (arg.Item is DevExpress.Xpf.Docking.DocumentPanel)
+                this.SelectedItem = (arg.Item as DevExpress.Xpf.Docking.DocumentPanel).Content;
         }
 
-        public object SelectedItem { get; set; }
+        public object SelectedItem { get; set; } = new DevExpress.Xpf.Docking.DocumentPanel() { Caption = 1 };
     }
 }

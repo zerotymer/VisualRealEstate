@@ -53,7 +53,7 @@
             <dxdo:DockLayoutManager ClosedPanelsBarVisibility="Never" FloatingMode="Desktop">
                 <dxdo:LayoutGroup Orientation="Horizontal">
                     <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation">
-                        <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem">
+                        <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem" x:Name="Accordion">
                             <dxa:AccordionItem dxmvvm:UIRegion.Region="{x:Static common:Regions.Navigation}" Header="Modules">
                                 <dxa:AccordionItem.ItemContainerStyle>
                                     <Style TargetType="dxa:AccordionItem">
@@ -82,7 +82,7 @@
 
                             <dxdo:LayoutPanel Caption="속성" ItemWidth="170">
                                 <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"
-                                   SelectedObject="{Binding Path=SelectedItem, Mode=TwoWay}"
+                                   SelectedObject="{Binding Path=SelectedTabIndex, ElementName=Documents, Mode=TwoWay}"
                                    PropertyDefinitionsSource="{Binding Path=Properties, Source={StaticResource DataProvider}}"
                                    PropertyDefinitionTemplateSelector="{StaticResource EditorsTemplateSelector}"
                                    PropertyDefinitionStyle="{StaticResource descriptionContainerStyle}"/>
