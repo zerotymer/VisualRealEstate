@@ -13,6 +13,9 @@ namespace ModularApp.Main.ViewModels
             return ViewModelSource.Create(() => new MainViewModel());
         }
 
+
+
+
         public void SelectedItemChanged(SelectedItemChangedEventArgs arg)
         {
             if (arg.Item is DevExpress.Xpf.Docking.DocumentPanel)
@@ -20,5 +23,22 @@ namespace ModularApp.Main.ViewModels
         }
 
         public object SelectedItem { get; set; } = new DevExpress.Xpf.Docking.DocumentPanel() { Caption = 1 };
+
+        public object ActivatedDocument
+        {
+            get
+            {
+                return 1;
+            }
+        }
+
+        public object ActivatedContent
+        {
+            get
+            {
+                return (SelectedItem as DevExpress.Xpf.Docking.DocumentPanel).Content;
+            }
+        }
+
     }
 }

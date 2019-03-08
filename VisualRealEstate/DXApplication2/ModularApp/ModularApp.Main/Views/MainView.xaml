@@ -50,9 +50,9 @@
             <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom" />
             
             <!--#region content-->
-            <dxdo:DockLayoutManager ClosedPanelsBarVisibility="Never" FloatingMode="Desktop">
+            <dxdo:DockLayoutManager x:Name="Manager" ClosedPanelsBarVisibility="Never" FloatingMode="Desktop">
                 <dxdo:LayoutGroup Orientation="Horizontal">
-                    <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation">
+                    <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation" IsActive="False">
                         <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem" x:Name="Accordion">
                             <dxa:AccordionItem dxmvvm:UIRegion.Region="{x:Static common:Regions.Navigation}" Header="Modules">
                                 <dxa:AccordionItem.ItemContainerStyle>
@@ -68,9 +68,6 @@
                     <dxdo:LayoutGroup Orientation="Vertical" ItemHeight="3*">
                         <dxdo:LayoutGroup Orientation="Horizontal" ItemWidth="3*">
                             <dxdo:DocumentGroup DestroyOnClosingChildren="False" dxmvvm:UIRegion.Region="{x:Static common:Regions.Documents}" Name="Documents">
-                                <dxmvvm:Interaction.Behaviors>
-                                    <dxmvvm:EventToCommand EventName="SelectedItemChanged" Command="{Binding SelectedItemChangedCommand}" PassEventArgsToCommand="True"/>
-                                </dxmvvm:Interaction.Behaviors>
                                 <dxdo:DocumentGroup.ItemStyle>
                                     <Style TargetType="dxdo:LayoutPanel">
                                         <Setter Property="Caption" Value="{Binding Caption}"/>
@@ -79,17 +76,18 @@
                                     </Style>
                                 </dxdo:DocumentGroup.ItemStyle>
                             </dxdo:DocumentGroup>
+                            
 
-                            <dxdo:LayoutPanel Caption="속성" ItemWidth="170">
+                            <dxdo:LayoutPanel Caption="속성" ItemWidth="170" IsActive="False">
                                 <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"
-                                   SelectedObject="{Binding Path=SelectedTabIndex, ElementName=Documents, Mode=TwoWay}"
+                                   SelectedObject="{x:Type dxdo:DocumentPanel}{Binding ElementName=Manager, Path=ActiveDockItem}"
                                    PropertyDefinitionsSource="{Binding Path=Properties, Source={StaticResource DataProvider}}"
                                    PropertyDefinitionTemplateSelector="{StaticResource EditorsTemplateSelector}"
                                    PropertyDefinitionStyle="{StaticResource descriptionContainerStyle}"/>
                             </dxdo:LayoutPanel>
                         </dxdo:LayoutGroup>
                         
-                        <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120"/>
+                        <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120" IsActive="False"/>
                     </dxdo:LayoutGroup>
                 </dxdo:LayoutGroup>
             </dxdo:DockLayoutManager>
