@@ -1,0 +1,98 @@
+﻿<UserControl
+    x:Class="ModularApp.Main.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="clr-namespace:ModularApp.Common;assembly=ModularApp.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:ModularApp.Main.ViewModels"
+    xmlns:views="clr-namespace:ModularApp.Main.Views"
+    mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="800"
+    d:DataContext="{dxmvvm:ViewModelSource viewModels:MainViewModel}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ModularApp.Main;component/Resources/PropertyResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:VisualStateService />
+    </dxmvvm:Interaction.Behaviors>
+
+    <dxb:BarManager>
+        <DockPanel>
+            <!--#region Menu -->
+            <dxr:RibbonControl DockPanel.Dock="Top" RibbonStyle="Office2010" ToolbarShowMode="Hide">
+                <dxr:RibbonDefaultPageCategory>
+                    <dxr:RibbonPage x:Name="ribbonPage_Main" Caption="View">
+                        <dxr:RibbonPageGroup x:Name="ribbonPageGroup_Main">
+                            <dxr:RibbonGalleryBarItem x:Name="ribbonGalleryBarItem_Theme">
+                                <dxmvvm:Interaction.Behaviors>
+                                    <dxr:RibbonGalleryItemThemeSelectorBehavior />
+                                </dxmvvm:Interaction.Behaviors>
+                            </dxr:RibbonGalleryBarItem>
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                </dxr:RibbonDefaultPageCategory>
+            </dxr:RibbonControl>
+            <!--#endregion -->
+            
+            <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom" />
+            
+            <!--#region content-->
+            <dxdo:DockLayoutManager x:Name="Manager" ClosedPanelsBarVisibility="Never" FloatingMode="Desktop">
+                <dxdo:LayoutGroup Orientation="Horizontal">
+                    <dxdo:LayoutPanel AllowClose="False" AutoHidden="True" Caption="네비게이션" ItemWidth="200" Name="Navigation" IsActive="False">
+                        <dxa:AccordionControl AutoExpandAllItems="True" SelectionUnit="SubItem" x:Name="Accordion">
+                            <dxa:AccordionItem dxmvvm:UIRegion.Region="{x:Static common:Regions.Navigation}" Header="Modules">
+                                <dxa:AccordionItem.ItemContainerStyle>
+                                    <Style TargetType="dxa:AccordionItem">
+                                        <Setter Property="Header" Value="{Binding Caption}" />
+                                        <Setter Property="Command" Value="{Binding SelectedItemChangedCommand}"/>
+                                    </Style>
+                                </dxa:AccordionItem.ItemContainerStyle>
+                            </dxa:AccordionItem>
+                        </dxa:AccordionControl>
+                    </dxdo:LayoutPanel>
+                    
+                    <dxdo:LayoutGroup Orientation="Vertical" ItemHeight="3*">
+                        <dxdo:LayoutGroup Orientation="Horizontal" ItemWidth="3*">
+                            <dxdo:DocumentGroup DestroyOnClosingChildren="False" dxmvvm:UIRegion.Region="{x:Static common:Regions.Documents}" Name="Documents">
+                                <dxdo:DocumentGroup.ItemStyle>
+                                    <Style TargetType="dxdo:LayoutPanel">
+                                        <Setter Property="Caption" Value="{Binding Caption}"/>
+                                        <Setter Property="IsActive" Value="{Binding IsActive, Mode=TwoWay}"/>
+                                        <Setter Property="ClosingBehavior" Value="ImmediatelyRemove"/>
+                                    </Style>
+                                </dxdo:DocumentGroup.ItemStyle>
+                            </dxdo:DocumentGroup>
+                            
+
+                            <dxdo:LayoutPanel Caption="속성" ItemWidth="170" IsActive="False">
+                                <dxprg:PropertyGridControl ShowCategories="True" ShowDescriptionIn="Panel" ExpandCategoriesWhenSelectedObjectChanged="True"
+                                   SelectedObject="{x:Type dxdo:DocumentPanel}{Binding ElementName=Manager, Path=ActiveDockItem}"
+                                   PropertyDefinitionsSource="{Binding Path=Properties, Source={StaticResource DataProvider}}"
+                                   PropertyDefinitionTemplateSelector="{StaticResource EditorsTemplateSelector}"
+                                   PropertyDefinitionStyle="{StaticResource descriptionContainerStyle}"/>
+                            </dxdo:LayoutPanel>
+                        </dxdo:LayoutGroup>
+                        
+                        <dxdo:LayoutPanel AutoHidden="True" Caption="출력" ItemHeight="120" IsActive="False"/>
+                    </dxdo:LayoutGroup>
+                </dxdo:LayoutGroup>
+            </dxdo:DockLayoutManager>
+            <!--#endregion-->
+        </DockPanel>
+    </dxb:BarManager>
+
+</UserControl>

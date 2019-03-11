@@ -119,7 +119,6 @@
     </Reference>
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
-    <Reference Include="vw.desktop.Api, Version=0.9.0.3, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -220,12 +219,6 @@
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="_ViewModels\Items\ToolboxViewModel.cs" />
-    <Compile Include="_Views\VWorldMap.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="_Views\VWorldMapControl.xaml.cs">
-      <DependentUpon>VWorldMapControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
@@ -282,10 +275,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="_ViewModels\TestMap.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="_Views\VWorldMapControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
